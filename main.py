@@ -6,32 +6,50 @@ from datetime import datetime
 
 print("\t\t--------------------------\n\t\t0xRecorder Lite by 0xAreeB\n\t\t--------------------------\n\t\t    Press \"F8\" to Stop\n\t\t--------------------------\n\n")
 
-resolution = (1920, 1080) # Recording Resolution
-codec = cv.VideoWriter_fourcc(*'XVID')
+# Recording Resolution
+resolution = (1920, 1080) 
 
-now = datetime.now() # Get Current Date and Time
+# Get Current Date and Time
+now = datetime.now() 
 
-# File Name
-fileExtension = ".avi" # Extension can be avi, mp4 etc.
+# File Extension
+fileExtension = "."
+fileExtension += input("Enter Output Format (avi or mp4):  ")
+
 dateTimeString = now.strftime("%d-%m-%Y_%H-%M-%S")
+
 filePrefix = "Recording_"
+
+#Final Name
 filename = ""
 filename += f"{filePrefix}{dateTimeString}{fileExtension}"
 
 # Show Output File Name on Console
-print(filename)
+print("\nFile Name:  " + filename + "\n")
 
+# Set Frames Rate
 fps = float(input("=> Video Speed (13 -> Normal):  "))
+
+# Set Video Codec
+if fileExtension == ".mp4":
+	codec = cv.VideoWriter_fourcc(*'mp4v')
+else:
+	codec = cv.VideoWriter_fourcc(*'XVID')
 
 out = cv.VideoWriter(filename, codec, fps, resolution)
 
+# Clear some Mem
+del fileExtension, filePrefix, dateTimeString, now
+
 print("\nRecording Started..")
 while True:
-	img = screenshot()
-	frame = nparray(img)
+	img = screenshot() # Take Screenshot
+	frame = nparray(img) # Create image Array
+	del img
 	frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
 	out.write(frame)
-		
+	
+	# F8 Key Press Listener
 	if Kb_is_pressed("F8"):
 		break
 print("\nRecording Stoped..")
