@@ -24,7 +24,7 @@ To build the ScreenRecorder Lite project, follow these steps:
 
 2. Open command prompt and navigate to the project directory.
 
-3. Run the following command to create an executable file: `pyinstaller --name=ScreenRecorderLite --console --onefile main.py`
+3. Run the following command to create an executable file: `python build.py`
 
 4. After the build process completes, you will find the executable file in the "dist" directory.
 
