@@ -2,7 +2,6 @@ from os import system as osSystem
 # Just add or remove values to this list based on the imports you don't want : )
 excluded_modules = [
     'PySide6',
-    'PIL',
     'tk',
     'tcl',
     'tcl8'
