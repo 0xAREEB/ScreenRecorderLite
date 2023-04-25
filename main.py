@@ -2,7 +2,6 @@ from pyautogui import screenshot
 import cv2 as cv
 from numpy import array as nparray
 from keyboard import is_pressed as Kb_is_pressed
-from datetime import datetime
 import argparse
 from os.path import splitext as splitPathText
 
