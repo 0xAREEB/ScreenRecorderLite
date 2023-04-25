@@ -3,45 +3,38 @@ import cv2 as cv
 from numpy import array as nparray
 from keyboard import is_pressed as Kb_is_pressed
 from datetime import datetime
+import argparse
+from os.path import splitext as splitPathText
 
-# Print the welcome message
 print("\t\t--------------------------\n\t\t0xRecorder Lite by 0xAreeB\n\t\t--------------------------\n\t\t    Press \"F8\" to Stop\n\t\t--------------------------\n\n")
 
-# Set the Recording Resolution
-resolution = (1920, 1080) 
+# Get command Line Arguments
+parser = argparse.ArgumentParser(description='Screen Recorder')
+parser.add_argument('--output', '-o', type=str, default='recording.avi', help='Output file name')
+parser.add_argument('--fps', '-fps', type=float, default=13.0, help='Frame Rate')
+parser.add_argument('--width', '-sx', type=int, default=1920, help='Recording Width')
+parser.add_argument('--height', '-sy', type=int, default=1080, help='Recording Height')
+args = parser.parse_args()
 
-# Get the current date and time
-now = datetime.now() 
+# Set the recording resolution
+resolution = (args.width, args.height)
 
-# Get the desired file extension from the user
-fileExtension = "."
-fileExtension += input("Enter Output Format (avi or mp4):  ")
+# Set output file name
+filename = args.output
 
-# Format the date and time string
-dateTimeString = now.strftime("%d-%m-%Y_%H-%M-%S")
-
-# Set the file name prefix
-filePrefix = "Recording_"
-
-# Finalize the file name
-filename = f"{filePrefix}{dateTimeString}{fileExtension}"
+# Set frames per second
+fps = args.fps
 
 # Show the output file name on the console
-print("\nFile Name:  " + filename + "\n")
-
-# Set the video speed
-speed = float(input("=> Video Speed (13 -> Normal):  "))
+print("\n\tResolution:  \"" + str(args.width) + "x"+str(args.height)+"\"\n\n\tName:  \"" + filename + "\"\n\tFPS:   \"" + str(fps) + "\"\n")
 
 # Set the video codec based on the file extension
-if fileExtension == ".mp4":
+if splitPathText(filename)[1] == ".mp4":
 	codec = cv.VideoWriter_fourcc(*'mp4v')
 else:
 	codec = cv.VideoWriter_fourcc(*'XVID')
 
-out = cv.VideoWriter(filename, codec, speed, resolution)
-
-# Clear memory
-del fileExtension, filePrefix, dateTimeString, now
+out = cv.VideoWriter(filename, codec, fps, resolution)
 
 print("\nRecording Started..")
 
