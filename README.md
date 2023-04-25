@@ -30,11 +30,13 @@ To build the ScreenRecorder Lite project, follow these steps:
 
 ## Usage
 
-To use ScreenRecorder Lite, run the executable file. The program will start running in a Console Window.
+1. Open command prompt and navigate to the application directory.
 
-To start recording your screen, enter Frames Rate (Normal 13/14). To stop recording, press the "F8" key.
+2. Type command `screenrecorder.exe -o OutputFileName.mp4 -fps 20`
 
-The recorded video file will be saved in the same directory as the executable file.
+3. Recording will be started. To stop recording, press the "F8" key.
+
+4. The recorded video file will be saved in the same directory as the executable file.
 
 ## Conclusion
 
