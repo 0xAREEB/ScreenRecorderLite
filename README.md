@@ -36,7 +36,7 @@ To build the ScreenRecorder Lite project, follow these steps:
 
 3. Recording will be started. To stop recording, press the "F8" key.
 
-4. The recorded video file will be saved in the same directory as the executable file.
+4. The recorded video file will be saved in the same current directory of Command Prompt.
 
 ## Preview
 ![Preview](https://user-images.githubusercontent.com/93572817/234247864-c8ead584-cee1-43bf-a904-09f5be53e26d.png)
