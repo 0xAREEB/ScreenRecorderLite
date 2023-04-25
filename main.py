@@ -21,8 +21,7 @@ dateTimeString = now.strftime("%d-%m-%Y_%H-%M-%S")
 filePrefix = "Recording_"
 
 #Final Name
-filename = ""
-filename += f"{filePrefix}{dateTimeString}{fileExtension}"
+filename = f"{filePrefix}{dateTimeString}{fileExtension}"
 
 # Show Output File Name on Console
 print("\nFile Name:  " + filename + "\n")
@@ -38,19 +37,19 @@ else:
 
 out = cv.VideoWriter(filename, codec, fps, resolution)
 
-# Clear some Mem
+# Clear some Memory
 del fileExtension, filePrefix, dateTimeString, now
 
 print("\nRecording Started..")
 while True:
 	img = screenshot() # Take Screenshot
-	frame = nparray(img) # Create image Array
+	frame = nparray(img) # Create a frame
 	del img
 	frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
-	out.write(frame)
+	out.write(frame) # Write frame to Output Recording File
 	
 	# F8 Key Press Listener
 	if Kb_is_pressed("F8"):
 		break
-print("\nRecording Stoped..")
 out.release()
+print("\nRecording Stoped..")
