@@ -38,6 +38,9 @@ To build the ScreenRecorder Lite project, follow these steps:
 
 4. The recorded video file will be saved in the same directory as the executable file.
 
+## Preview
+![Screenshot](Preview.png)
+
 ## Conclusion
 
 ScreenRecorder Lite is a simple yet powerful screen recording tool that can be used to record your screen in real-time. It is easy to use and requires only a few libraries to be installed. With ScreenRecorder Lite, you can create video tutorials, record gameplay, and much more.
