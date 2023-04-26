@@ -4,7 +4,7 @@ ScreenRecorder Lite is a Python project that allows you to record your screen wi
 
 ## Build
 
-Before building the ScreenRecorder Lite project, you need to install the required libraries. You can install these libraries using pip. Here are the steps to install the required libraries:
+> Before building the ScreenRecorder Lite project, you need to install the required libraries using pip. Here are the steps to install the libraries:
 
 1. Install OpenCV library: `pip install opencv-python`
 
@@ -16,7 +16,7 @@ Before building the ScreenRecorder Lite project, you need to install the require
 
 5. Install PyInstaller library: `pip install pyinstaller`
 
-**To build the ScreenRecorder Lite project, follow these steps:**
+> **To build the ScreenRecorder Lite project, follow these steps:**
 
 1. Clone the ScreenRecorder Lite repository from GitHub.
 
