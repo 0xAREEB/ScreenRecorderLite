@@ -2,9 +2,9 @@
 
 ScreenRecorder Lite is a Python project that allows you to record your screen with ease. It is made using the OpenCV, PyAutoGUI, NumPy, and Keyboard libraries. With ScreenRecorder Lite, you can record your screen in real-time and save it as a video file.
 
-## Installation
+## Build
 
-Before running the ScreenRecorder Lite project, you need to install the required libraries. You can install these libraries using pip. Here are the steps to install the required libraries:
+Before building the ScreenRecorder Lite project, you need to install the required libraries. You can install these libraries using pip. Here are the steps to install the required libraries:
 
 1. Install OpenCV library: `pip install opencv-python`
 
@@ -16,9 +16,7 @@ Before running the ScreenRecorder Lite project, you need to install the required
 
 5. Install PyInstaller library: `pip install pyinstaller`
 
-## Build
-
-To build the ScreenRecorder Lite project, follow these steps:
+**To build the ScreenRecorder Lite project, follow these steps:**
 
 1. Clone the ScreenRecorder Lite repository from GitHub.
 
@@ -30,7 +28,7 @@ To build the ScreenRecorder Lite project, follow these steps:
 
 ## Usage
 
-1. Open command prompt and navigate to the application directory.
+1. Open command prompt and navigate to the application directory **or** add the executable's directory to path.
 
 2. Type command `screenrecorder.exe -o OutputFileName.mp4 -fps 20`
 
